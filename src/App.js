@@ -1,18 +1,17 @@
 
 import { useState } from 'react';
 import './App.css';
-// import Accordian from './components/Accordian';
+import Accordian from './components/Accordian';
 import Form from './components/Form';
 import Navbar from './components/Navbar';
 import LinkedAccordina from './components/LinkedAccordina';
 import Alert from './components/Alert';
-// import About from './About';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import About from './About';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
 
@@ -30,9 +29,23 @@ function App() {
     setTimeout(setAlert, 1500);
   }
 
-
-
+  const removeClasses =()=>{
+   document.body.classList.remove('bg-primary');
+   document.body.classList.remove('bg-success');
+   document.body.classList.remove('bg-warning');
+   document.body.classList.remove("bg-danger");
+  }
+  
+  
+  const toggleMood2=(cls)=>{
+    removeClasses();
+    console.log(cls);
+    document.body.classList.add("bg-"+cls)
+    setMood(cls);
+  }
+  
   const toggleMood=()=>{
+    removeClasses();
     if(mood==='light'){
       setMood("dark");
       setTextCol("light");
@@ -52,23 +65,31 @@ function App() {
   }
 
   return (
-    // <Router>
+     <Router>
       <>
       
-        <Navbar mood={mood} toggleMood={toggleMood} textCol={textCol} />
+        <Navbar mood={mood} toggleMood={toggleMood} toggleMood2={toggleMood2} textCol={textCol} />
         <Alert alert={alert} />
-        {/* <Accordian mood={mood} /> */}
-        <Form newAlert={newAlert} />
+        <Switch>
+          <Route path="/accordian">
+        { <Accordian mood={mood} /> }
+          </Route>
+        </Switch>
+        <Switch> 
+           <Route exact path="/"> 
+               <Form newAlert={newAlert} />
+         </Route> 
+         </Switch>
+        <Switch> 
+         <Route exact path="/about" ><About accBg={accBg} textCol={textCol} /></Route> 
+       </Switch> 
+       <Switch>
+        <Route path="/Linkedaccordina">
         <LinkedAccordina accBg={accBg} textCol={textCol} />
-        {/* <Switch> */}
-          {/* <Route exact path="/home"> */}
-          {/* </Route> */}
-        {/* </Switch> */}
-        {/* <Switch> */}
-          {/* <Route exact path="/about"><About/></Route> */}
-        {/* </Switch> */}
+        </Route>
+       </Switch>
      </>
-    /* </Router> */
+     </Router> 
   );
 }
 

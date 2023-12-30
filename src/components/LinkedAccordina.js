@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function LinkedAccordina(props) {
   return (
-    <div className={`container    `}>
+    <div className={`container    p-5`}>
+      <h2 className='text-center display-5 text-uppercase ' >How To Use</h2>
+
       <div className="accordion" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header">
@@ -12,8 +14,7 @@ export default function LinkedAccordina(props) {
     </h2>
     <div id="collapseOne" className="accordion-collapse collapse show" data-bs-parent="#accordionExample">
       <div className={`accordion-body  bg-${props.accBg}  text-${props.textCol} ` }>
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
+        <strong>This is the first item's accordion body.</strong> Have some text that needs to be in UPPERCASE? Just input your text in the designated box, hit the "Convert to UPPERCASE" button, and voilà! Your text will be instantly transformed to UPPERCASE. </div>
     </div>
   </div>
   <div className="accordion-item">

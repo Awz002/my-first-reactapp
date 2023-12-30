@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 //    const myStyle={
 //     backgroundColor:"black",
@@ -11,32 +11,21 @@ export default function Accordian(props) {
 
  
 
-    const [myStyle,newStyle]=useState({
-        backgroundColor:"white",
-        color:"black",
-    })
+    // const [myStyle,newStyle]=useState({
+    //     backgroundColor:"white",
+    //     color:"black",
+    // })
  
-    // const [btnText,newText]=useState("Dark")
-    const toggleStyle=()=>{
-        if(myStyle.backgroundColor==="white"){
-            newStyle({
-                backgroundColor:"black",
-                color:"white",
-            })
-            // newText("Light");
-        }
-        else{
-            newStyle({
-                backgroundColor:"white",
-                color:"black"
-            })
-            // newText("Dark")
-        }
+    let myStyle={
+       color:props.mood==="light"?"black":"white",
+       backgroundColor:props.mood==="light"?"white":"black",
+      //  border:"2px solid red"
     }
-    
+
 
   return (
-    <div className='container py-4' style={myStyle} >
+    <div className='container py-4 my-5 ' style={{border:"0.1px solid", borderColor:props.mood==="light"?"black":"white", borderRadius:"23px"}} >
+      <h2 className='text-center display-5' >Free To Use</h2>
       <div className="accordion" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header">
@@ -75,10 +64,10 @@ export default function Accordian(props) {
     </div>
   </div>
 </div>
-<div className="form-check form-switch">
-  <input className="form-check-input" type="checkbox" role="switch" onClick={toggleStyle} id="flexSwitchCheckDefault"/>
+{/* <div className="form-check form-switch">
+  <input className="form-check-input" type="checkbox" role="switch"  id="flexSwitchCheckDefault"/>
   <label className={`form-check-label  `} htmlFor="flexSwitchCheckDefault" >{myStyle.backgroundColor==="white"?"Shift to Dark Mode":"Shift to Light Mode"}</label>
-</div>
+</div> */}
     </div>
   )
 }

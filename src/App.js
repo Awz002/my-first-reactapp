@@ -1,17 +1,18 @@
 
 import { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Accordian from './components/Accordian';
+// import Accordian from './components/Accordian';
 import Form from './components/Form';
 import Navbar from './components/Navbar';
 import LinkedAccordina from './components/LinkedAccordina';
 import Alert from './components/Alert';
 import About from './About';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+// } from "react-router-dom";
 
 function App() {
 
@@ -65,31 +66,33 @@ function App() {
   }
 
   return (
-     <Router>
+    //  <Router>
       <>
       
         <Navbar mood={mood} toggleMood={toggleMood} toggleMood2={toggleMood2} textCol={textCol} />
         <Alert alert={alert} />
-        <Switch>
-          <Route path="/accordian">
-        { <Accordian mood={mood} /> }
-          </Route>
-        </Switch>
-        <Switch> 
-           <Route exact path="/"> 
+        {/* <Switch>/ */}
+          {/* <Route path="/accordian"> */}
+        {/* { <Accordian mood={mood} /> } */}
+          {/* </Route> */}
+        {/* </Switch> */}
+        {/* <Switch>  */}
+           {/* <Route exact path="/">  */}
                <Form newAlert={newAlert} />
-         </Route> 
-         </Switch>
-        <Switch> 
-         <Route exact path="/about" ><About accBg={accBg} textCol={textCol} /></Route> 
-       </Switch> 
-       <Switch>
-        <Route path="/Linkedaccordina">
+         {/* </Route>  */}
+         {/* </Switch> */}
+        {/* <Switch>  */}
+         {/* <Route exact path="/about" > */}
+          <About accBg={accBg} textCol={textCol} />
+          {/* </Route>  */}
+       {/* </Switch>  */}
+       {/* <Switch> */}
+        {/* <Route path="/Linkedaccordina"> */}
         <LinkedAccordina accBg={accBg} textCol={textCol} />
-        </Route>
-       </Switch>
+        {/* </Route> */}
+       {/* </Switch> */}
      </>
-     </Router> 
+    //  </Router> 
   );
 }
 

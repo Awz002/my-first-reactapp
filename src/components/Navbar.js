@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // import PropTypes from "prop-types";
 
@@ -8,9 +8,9 @@ export default function Navbar(props) {
     <div>
       <nav className={`navbar navbar-expand-lg bg-${props.mood}`} style={{borderBottom:"2px solid white",height:"82px"}} >
         <div className="container-fluid">
-          <Link className={`nav-a  text-${props.textCol}  navbar-brand` } style={{fontSize:"2rem"}}  to="/home">
+          <a className={`nav-a  text-${props.textCol}  navbar-brand` } style={{fontSize:"2rem"}}  href="/home">
             Company Logo
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,50 +25,50 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse " id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className={`nav-link  text-${props.textCol} `} aria-current="page" to="/">
+                <a className={`nav-link  text-${props.textCol} `} aria-current="page" href="/">
                   Home
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link  text-${props.textCol}`} to="/about" >
+                <a className={`nav-link  text-${props.textCol}`} href="/about" >
                   Link
-                </Link>
+                </a>
               </li>
               <li className="nav-item dropdown">
-                <Link
+                <a
                   className={`nav-link dropdown-toggle text-${props.textCol}`}
-                  to="/"
+                  href="/"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Drop Down
-                </Link>
+                </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" to="/Linkedaccordina">
+                    <a className="dropdown-item" href="/Linkedaccordina">
                       Action
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/Linkedaccordina">
+                    <a className="dropdown-item" href="/Linkedaccordina">
                       Another action
-                    </Link>
+                    </a>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li  >
-                    <Link className="dropdown-item"  to="/Linkedaccordina">
+                    <a className="dropdown-item"  href="/Linkedaccordina">
                       Something else here
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <Link  className={`nav-link text-${props.textCol} `} to="/accordian" aria-disabled="true">
+                <a  className={`nav-link text-${props.textCol} `} href="/accordian" aria-disabled="true">
                   Disabled
-                </Link>
+                </a>
               </li>
             </ul>
             {/* <form className="d-flex" role="search">

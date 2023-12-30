@@ -1,10 +1,11 @@
 {
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://Awz002.github.io/my-first-reactapp",
   "name": "my-first-reactapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
@@ -12,6 +13,8 @@
     "web-vitals": "^3.5.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

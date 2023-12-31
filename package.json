@@ -1,7 +1,7 @@
 {
   "homepage": "https://Awz002.github.io/my-first-reactapp",
   "name": "my-first-reactapp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
